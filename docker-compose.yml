@@ -1,0 +1,33 @@
+# Author: noraj
+version: '3'
+services:
+  misc5_i2pd:
+    build: i2pd
+    image: misc5_i2pd
+    user: i2pd
+    container_name: misc5_i2pd
+    ports:
+      - "4567" # i2pd - an ephemeral host port is chosen
+    networks:
+      misc5:
+        aliases:
+          - i2pd
+    restart: always
+  misc5_eepsite:
+    build: eepsite
+    image: misc5_eepsite
+    user: darkhttpd
+    container_name: misc5_eepsite
+    networks:
+      misc5:
+        aliases:
+          - darkhttpd
+    restart: always
+
+
+networks:
+  misc5:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.enable_ip_masquerade: "true" # le container n'aura pas acces a internet
+      com.docker.network.bridge.name: "misc_5" # nom du repo
