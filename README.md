@@ -59,3 +59,9 @@ The given commands are for ArchLinux based systems.
 ## Flag
 
 `sigsegv{n0r4j:sdhfisdhfuyehk}`
+
+## SigSegV2
+
+A web/misc/reverse/network challenge that was available during SigSegV2 CTF (2019).
+
+5 teams on 36 flaged this challenge.
